@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123d2b">
+<title>YardLink | Better Yards. Better Service.</title>
+<style>
+:root{--forest:#123d2b;--green:#26734b;--lime:#b8df79;--cream:#f5f7ef;--ink:#193328;--muted:#64756a;--line:#dce6dc}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{background:var(--forest);color:white;padding:16px max(20px,calc((100% - 1080px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-weight:850;font-size:1.35rem;letter-spacing:-.5px}.logo span{color:var(--lime)}nav{display:flex;gap:8px;flex-wrap:wrap}button,.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-block}
+nav button{background:#ffffff18;color:white}.primary{background:var(--green);color:white}.light{background:white;color:var(--forest);border:1px solid var(--line)}
+main{max-width:1080px;margin:auto;padding:24px 18px 60px}
+.hero{background:linear-gradient(120deg,#123d2b,#2d8050);color:white;border-radius:24px;padding:clamp(28px,6vw,60px);display:grid;grid-template-columns:1.4fr .8fr;gap:20px;align-items:center;overflow:hidden}
+.hero h1{font-size:clamp(2.1rem,5vw,4rem);line-height:1.02;margin:10px 0 16px;letter-spacing:-1.8px}.hero p{font-size:1.08rem;max-width:570px;color:#e4f0e6}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.75rem;font-weight:850;color:var(--lime)}
+.hero-art{font-size:clamp(5rem,14vw,10rem);text-align:center;filter:drop-shadow(0 12px 18px #061b10)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+section{margin-top:38px}.section-head{display:flex;justify-content:space-between;gap:16px;align-items:end;flex-wrap:wrap}h2{font-size:1.8rem;margin:0 0 8px;letter-spacing:-.7px}.sub{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.card{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 24px #173c2810}
+.card h3{margin:0 0 8px;font-size:1.2rem}.price{font-size:2rem;font-weight:850;color:var(--green);margin:12px 0}.price small{font-size:.85rem;color:var(--muted);font-weight:500}
+ul{padding-left:20px;color:var(--muted);line-height:1.8}.tag{display:inline-block;background:#edf6df;color:#315c2a;padding:5px 9px;border-radius:99px;font-size:.75rem;font-weight:800}
+.featured{border:2px solid var(--green);position:relative}.featured:before{content:"POPULAR";position:absolute;right:16px;top:16px;color:var(--green);font-size:.68rem;font-weight:900;letter-spacing:1px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:24px}
+form{display:grid;gap:12px;margin-top:16px}label{font-weight:700;font-size:.9rem}input,select,textarea{width:100%;padding:13px;border:1px solid #cbd9cc;border-radius:10px;font:inherit;background:#fff;color:var(--ink)}textarea{min-height:90px;resize:vertical}
+.field{display:grid;gap:6px}.notice{background:#edf5e9;border-radius:12px;padding:12px;color:#35583b;font-size:.9rem}
+.job{border:1px solid var(--line);padding:14px;border-radius:12px;margin-top:10px}.job strong{display:block}.empty{color:var(--muted);padding:12px 0}
+footer{text-align:center;padding:28px;background:var(--forest);color:#dbe9dc}
+.hidden{display:none!important}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.hero-art{display:none}.grid,.split{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="logo">🌿 Yard<span>Link</span></div><nav><button onclick="showSection('home')">Home</button><button onclick="showSection('request')">Request Service</button><button onclick="showSection('plans')">Landscaper Plans</button><button onclick="showSection('leads')">Lead Center</button></nav></header>
+<main>
+<div id="home">
+<div class="hero"><div><div class="eyebrow">Better yards. Better service.</div><h1>Your yard deserves a little more green.</h1><p>Find local lawn-care pros, request the work you need, and keep your outdoor space looking its best. Landscapers can join YardLink to discover new customer opportunities.</p><div class="actions"><button class="light" onclick="showSection('request')">I'm a homeowner</button><button class="primary" style="background:#b8df79;color:#173d2b" onclick="showSection('plans')">I'm a landscaper</button></div></div><div class="hero-art">🏡🌳</div></div>
+<section><div class="section-head"><div><h2>How YardLink works</h2><p class="sub">A simple connection between homeowners and local lawn-care pros.</p></div></div><div class="grid"><div class="card"><span class="tag">01 · Homeowners</span><h3>Tell us what your yard needs</h3><p class="sub">Send a free service request with your location and the work you need.</p></div><div class="card"><span class="tag">02 · Landscapers</span><h3>Discover local opportunities</h3><p class="sub">Choose a membership and browse customer requests in the lead center.</p></div><div class="card"><span class="tag">03 · Get it done</span><h3>Connect and schedule</h3><p class="sub">Contact the customer, discuss the job, and arrange service directly.</p></div></div></section>
+</div>
+<section id="request" class="hidden"><div class="section-head"><div><h2>Request lawn-care service</h2><p class="sub">Homeowner requests are free.</p></div></div><div class="panel"><form id="requestForm"><div class="field"><label>Your name</label><input name="name" required placeholder="Full name"></div><div class="field"><label>Phone or email</label><input name="contact" required placeholder="How can landscapers reach you?"></div><div class="field"><label>City or ZIP code</label><input name="area" required placeholder="Service location"></div><div class="field"><label>Service needed</label><select name="service"><option>Lawn mowing</option><option>Yard cleanup</option><option>Landscaping / planting</option><option>Hedge trimming</option><option>Other</option></select></div><div class="field"><label>Job details</label><textarea name="details" placeholder="Describe your yard and the work needed"></textarea></div><button class="primary">Submit free request</button></form><p class="notice">Prototype note: requests are saved only in this browser on this device until a shared database is connected.</p></div></section>
+<section id="plans" class="hidden"><div class="section-head"><div><h2>Landscaper memberships</h2><p class="sub">Choose a plan to get started with YardLink.</p></div></div><div class="grid">
+<div class="card"><h3>Starter</h3><div class="price">$29.99 <small>/ month</small></div><ul><li>Browse local job requests</li><li>Basic business profile</li><li>Customer contact details</li></ul><button class="primary" onclick="choosePlan('Starter',29.99)">Choose Starter</button></div>
+<div class="card featured"><h3>Professional</h3><div class="price">$49.99 <small>/ month</small></div><ul><li>Everything in Starter</li><li>Priority lead placement</li><li>Customer reviews profile</li><li>Job tracking tools</li></ul><button class="primary" onclick="choosePlan('Professional',49.99)">Choose Professional</button></div>
+<div class="card"><h3>Business</h3><div class="price">$89.99 <small>/ month</small></div><ul><li>Everything in Professional</li><li>Multiple crew profiles</li><li>Expanded service areas</li><li>Business tools</li></ul><button class="primary" onclick="choosePlan('Business',89.99)">Choose Business</button></div>
+</div>
+<div class="panel" style="margin-top:18px"><h3>Landscaper registration</h3><p class="sub">Choose a plan above, then complete your profile.</p><form id="proForm"><div class="field"><label>Business name</label><input name="business" required></div><div class="field"><label>Contact name</label><input name="owner" required></div><div class="field"><label>Email</label><input name="email" type="email" required></div><div class="field"><label>Phone</label><input name="phone" required></div><div class="field"><label>Service area</label><input name="area" required placeholder="City or ZIP"></div><p id="chosen" class="notice">Selected plan: none</p><button class="primary">Save registration</button></form></div>
+<p class="notice" style="margin-top:14px">Membership selection here is a demo only. No subscription is charged and no paid access is activated until a payment provider and secure server-side subscription checks are connected.</p>
+</section>
+<section id="leads" class="hidden"><div class="section-head"><div><h2>Landscaper lead center</h2><p class="sub">Demo requests submitted from this browser appear below.</p></div><button class="light" onclick="renderLeads()">Refresh</button></div><div class="panel"><div id="leadList" class="empty">No requests yet. Submit a homeowner request to see a sample lead.</div></div><p class="notice" style="margin-top:14px">This preview stores sample data locally. A shared database and real login are required before customers and landscapers can use this across different phones.</p></section>
+</main>
+<footer>🌿 YardLink · Better Yards. Better Service.</footer>
+<script>
+let planName='',planPrice=0;
+function showSection(id){['home','request','plans','leads'].forEach(x=>document.getElementById(x).classList.toggle('hidden',x!==id));if(id==='leads')renderLeads();window.scrollTo({top:0,behavior:'smooth'});}
+function choosePlan(n,p){planName=n;planPrice=p;document.getElementById('chosen').textContent=`Selected plan: ${n} — $${p.toFixed(2)}/month`;document.getElementById('proForm').scrollIntoView({behavior:'smooth',block:'start'});}
+function getRequests(){try{return JSON.parse(localStorage.getItem('yardlink_requests')||'[]')}catch(e){return[]}}
+document.getElementById('requestForm').addEventListener('submit',e=>{e.preventDefault();let d=Object.fromEntries(new FormData(e.target));d.id=Date.now();let a=getRequests();a.unshift(d);localStorage.setItem('yardlink_requests',JSON.stringify(a));e.target.reset();alert('Your demo request has been saved on this device. A shared lead system still needs to be connected.');showSection('leads');});
+document.getElementById('proForm').addEventListener('submit',e=>{e.preventDefault();if(!planName){alert('Please choose a membership plan first.');return}let d=Object.fromEntries(new FormData(e.target));d.plan=planName;d.price=planPrice;localStorage.setItem('yardlink_demo_landscaper',JSON.stringify(d));alert('Demo profile saved on this device. No payment has been taken.');});
+function renderLeads(){let a=getRequests(),el=document.getElementById('leadList');if(!a.length){el.className='empty';el.textContent='No requests yet. Submit a homeowner request to see a sample lead.';return}el.className='';el.innerHTML=a.map(x=>`<div class="job"><strong>${safe(x.service)} · ${safe(x.area)}</strong><span>${safe(x.details||'No additional details')}</span><p>Homeowner: ${safe(x.name)} · Contact: ${safe(x.contact)}</p></div>`).join('')}
+function safe(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+</script>
+</body></html>
